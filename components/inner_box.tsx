@@ -1,4 +1,5 @@
 import Contents from './contents';
+import Navbar from './navbar';
 import Status from './status';
 import UserInfo from './user_info';
 
@@ -10,6 +11,7 @@ function InnerBox() {
         <UserInfo />
         <Contents />
       </main>
+      <Navbar />
       <style jsx>{`
         .inner-box {
           position: absolute;

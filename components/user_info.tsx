@@ -43,9 +43,9 @@ function UserInfo() {
       <div className='mood'>
         <p>오늘의 기분</p>
         <select className='mood-select'>
-          <option value='joy'>기쁨😊</option>
-          <option value='sadness'>우울😥</option>
-          <option value='sleepy'>졸림😴</option>
+          <option value='joy'>기쁨 😊</option>
+          <option value='sadness'>우울 😥</option>
+          <option value='sleepy'>졸림 😴</option>
         </select>
       </div>
       <style jsx>{`
