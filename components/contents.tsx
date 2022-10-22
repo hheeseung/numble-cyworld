@@ -18,6 +18,7 @@ function Contents() {
           border: 1px solid #999999;
           border-radius: 10px;
           background-color: #ffffff;
+          padding: 30px 50px;
         }
       `}</style>
     </section>

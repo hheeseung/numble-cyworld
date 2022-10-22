@@ -8,8 +8,8 @@ function Background() {
         .background {
           position: relative;
           background: url('/image/background.png') center/cover no-repeat;
-          width: 100vw;
-          height: 100vh;
+          width: 1920px;
+          height: 937px;
         }
       `}</style>
     </div>
