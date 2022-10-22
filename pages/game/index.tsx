@@ -1,7 +1,5 @@
-import Background from '../../components/background';
-
 function Game() {
-  return <Background />;
+  return <h1>Game Page</h1>;
 }
 
 export default Game;

@@ -1,4 +1,4 @@
-function Status() {
+function Header() {
   return (
     <header className='header'>
       <div className='visit'>
@@ -46,4 +46,4 @@ function Status() {
   );
 }
 
-export default Status;
+export default Header;

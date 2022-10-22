@@ -1,7 +1,5 @@
-import Background from '../../components/background';
-
 function Diary() {
-  return <Background />;
+  return <h1>Diary</h1>;
 }
 
 export default Diary;

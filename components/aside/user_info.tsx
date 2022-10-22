@@ -6,7 +6,7 @@ import {
   faHashtag,
 } from '@fortawesome/free-solid-svg-icons';
 
-function UserInfo() {
+function Aside() {
   return (
     <aside className='aside'>
       <div className='profile'>
@@ -95,4 +95,4 @@ function UserInfo() {
   );
 }
 
-export default UserInfo;
+export default Aside;

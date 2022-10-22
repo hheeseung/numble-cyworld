@@ -1,5 +1,7 @@
+import Background from '../../../components/background';
+
 function CreatePost() {
-  return <h1>Write New Post here</h1>;
+  return <Background />;
 }
 
 export default CreatePost;
