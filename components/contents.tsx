@@ -2,13 +2,8 @@ import UserInfo from './user_info';
 
 function Contents() {
   return (
-    <main className='main'>
-      <UserInfo />
-      <section className='section'></section>
+    <section className='section'>
       <style jsx>{`
-        .main {
-          display: flex;
-        }
         .section {
           width: 880px;
           height: 718px;
@@ -17,7 +12,7 @@ function Contents() {
           background-color: #ffffff;
         }
       `}</style>
-    </main>
+    </section>
   );
 }
 
