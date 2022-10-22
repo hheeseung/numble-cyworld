@@ -1,6 +1,4 @@
-import Contents from './contents';
 import InnerBox from './inner_box';
-import Status from './status';
 
 function Background() {
   return (
