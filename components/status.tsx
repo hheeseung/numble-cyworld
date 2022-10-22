@@ -23,7 +23,7 @@ function Status() {
           display: flex;
           justify-content: space-evenly;
           font-size: 0.8rem;
-          padding: 7px 15px;
+          padding: 7px 25px;
         }
         .visit span:nth-child(2) {
           color: #ff0000;
