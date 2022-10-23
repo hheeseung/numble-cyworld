@@ -36,8 +36,10 @@ function Navbar() {
         <div
           className='diary'
           style={{
-            backgroundColor: router.pathname === `/${DIARY}` ? BG_COLOR : COLOR,
-            color: router.pathname === `/${DIARY}` ? COLOR : BG_COLOR,
+            backgroundColor: router.pathname.includes(`/${DIARY}`)
+              ? BG_COLOR
+              : COLOR,
+            color: router.pathname.includes(`/${DIARY}`) ? COLOR : BG_COLOR,
           }}
         >
           다이어리
