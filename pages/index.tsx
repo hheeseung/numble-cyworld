@@ -187,7 +187,7 @@ function Home() {
         }
         .music-header span {
           font-size: 0.8rem;
-          line-height: 2rem;
+          line-height: 1.8rem;
           margin-left: 10px;
         }
         .playlist {

@@ -38,50 +38,69 @@ function Game() {
   };
 
   return (
-    <section className='container'>
-      <div className='game'>
-        <img src='/image/train.png' alt='game' />
-        <p className='title'>끝말잇기</p>
-        <p className='word'>
-          제시어: <span>{word}</span>
-        </p>
-        <form className='word-form' onSubmit={onSubmit}>
-          <input
-            ref={inputRef}
-            onChange={onChange}
-            type='text'
-            className='search-input'
-            placeholder='단어를 입력하세요.'
-            value={inputText}
-          />
-          <button className='button'>검색</button>
-        </form>
-        <p className='result'>
-          {visible ? '결과는?' : result ? '정답입니다!' : '오답입니다!'}
-        </p>
-      </div>
-      <div className='lotto'>
-        <img src='/image/lotto.png' alt='lotto' />
-        <p className='title'>LOTTO</p>
-        <p>버튼을 눌러 추첨하세요.</p>
-        <div className='lotto-numbers'>
-          {lotto.map((i, index) => (
-            <span key={index} className='lotto-number'>
-              {i}
-            </span>
-          ))}
+    <>
+      <header className='game-header'>
+        <h3>Game</h3>
+        <span>TODAY CHOICE</span>
+      </header>
+      <section className='container'>
+        <div className='game'>
+          <img src='/image/train.png' alt='game' />
+          <p className='title'>끝말잇기</p>
+          <p className='word'>
+            제시어: <span>{word}</span>
+          </p>
+          <form className='word-form' onSubmit={onSubmit}>
+            <input
+              ref={inputRef}
+              onChange={onChange}
+              type='text'
+              className='search-input'
+              placeholder='단어를 입력하세요.'
+              value={inputText}
+            />
+            <button className='button'>검색</button>
+          </form>
+          <p className='result'>
+            {visible ? '결과는?' : result ? '정답입니다!' : '오답입니다!'}
+          </p>
         </div>
-        <button className='button' onClick={onClick}>
-          추첨하기
-        </button>
-      </div>
+        <div className='lotto'>
+          <img src='/image/lotto.png' alt='lotto' />
+          <p className='title'>LOTTO</p>
+          <p>버튼을 눌러 추첨하세요.</p>
+          <div className='lotto-numbers'>
+            {lotto.map((i, index) => (
+              <span key={index} className='lotto-number'>
+                {i}
+              </span>
+            ))}
+          </div>
+          <button className='button' onClick={onClick}>
+            추첨하기
+          </button>
+        </div>
+      </section>
       <style jsx>{`
         p {
           margin: 0;
           padding: 0;
         }
+        .game-header {
+          display: flex;
+          border-bottom: 1px solid #999;
+        }
+        .game-header h3 {
+          margin: 0;
+          color: #55b2d4;
+        }
+        .game-header span {
+          font-size: 0.8rem;
+          line-height: 1.8rem;
+          margin-left: 10px;
+        }
         .container {
-          height: 100%;
+          height: 95%;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -125,6 +144,7 @@ function Game() {
           margin-left: 5px;
           padding: 3px 5px;
           margin-top: 5px;
+          cursor: pointer;
         }
         .lotto-numbers {
           background-color: #ffe400;
@@ -136,7 +156,7 @@ function Game() {
           margin: 0 5px;
         }
       `}</style>
-    </section>
+    </>
   );
 }
 
