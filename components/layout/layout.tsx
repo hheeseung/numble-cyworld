@@ -48,7 +48,7 @@ function Layout(props: Props) {
           </Link>
           <Link href={`/${DIARY}`}>
             <div
-              className='diary'
+              className={`${DIARY}`}
               style={{
                 backgroundColor: router.pathname.includes(`/${DIARY}`)
                   ? BG_COLOR
