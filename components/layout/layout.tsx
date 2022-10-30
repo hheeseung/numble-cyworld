@@ -1,12 +1,12 @@
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSmile,
   faPhone,
   faEnvelope,
   faHashtag,
-} from '@fortawesome/free-solid-svg-icons';
-import {useRouter} from 'next/router';
-import Link from 'next/link';
+} from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 type Props = {
   children: React.ReactNode;
@@ -14,21 +14,21 @@ type Props = {
 
 function Layout(props: Props) {
   const router = useRouter();
-  const GAME = 'game';
-  const DIARY = 'diary';
-  const BG_COLOR = '#ffffff';
-  const COLOR = '#298eb5';
+  const GAME = "game";
+  const DIARY = "diary";
+  const BG_COLOR = "#ffffff";
+  const COLOR = "#298eb5";
 
   return (
-    <div className='background'>
-      <div className='inner-box'>
+    <div className="background">
+      <div className="inner-box">
         <nav>
-          <Link href='/'>
+          <Link href="/">
             <div
-              className='home'
+              className="home"
               style={{
-                backgroundColor: router.pathname === '/' ? BG_COLOR : COLOR,
-                color: router.pathname === '/' ? COLOR : BG_COLOR,
+                backgroundColor: router.pathname === "/" ? BG_COLOR : COLOR,
+                color: router.pathname === "/" ? COLOR : BG_COLOR,
               }}
             >
               홈
@@ -60,27 +60,27 @@ function Layout(props: Props) {
             </div>
           </Link>
         </nav>
-        <header className='header'>
-          <div className='visit'>
+        <header className="header">
+          <div className="visit">
             <span>TODAY</span>
             <span>0</span>
             <span>│</span>
             <span>TOTAL</span>
             <span>11203</span>
           </div>
-          <div className='title'>사이좋은 사람들, 싸이월드</div>
-          <div className='private'>
+          <div className="title">사이좋은 사람들, 싸이월드</div>
+          <div className="private">
             <span>사생활보호설정</span>
             <span> ▶</span>
           </div>
         </header>
-        <main className='main'>
-          <aside className='aside'>
-            <div className='profile'>
-              <img src='/image/CyworldProfile.png' alt='profile' />
+        <main className="main">
+          <aside className="aside">
+            <div className="profile">
+              <img src="/image/CyworldProfile.png" alt="profile" />
             </div>
-            <div className='metadata'>
-              <ul className='metadata-list'>
+            <div className="metadata">
+              <ul className="metadata-list">
                 <li>
                   <span>
                     <FontAwesomeIcon icon={faSmile} />
@@ -107,22 +107,22 @@ function Layout(props: Props) {
                 </li>
               </ul>
             </div>
-            <div className='mood'>
+            <div className="mood">
               <p>오늘의 기분</p>
-              <select className='mood-select'>
-                <option value='joy'>기쁨 😊</option>
-                <option value='sadness'>우울 😥</option>
-                <option value='sleepy'>졸림 😴</option>
+              <select className="mood-select">
+                <option value="joy">기쁨 😊</option>
+                <option value="sadness">우울 😥</option>
+                <option value="sleepy">졸림 😴</option>
               </select>
             </div>
           </aside>
-          <section className='section'>{props.children}</section>
+          <section className="section">{props.children}</section>
         </main>
       </div>
       <style jsx>{`
         .background {
           position: relative;
-          background: url('/image/background.png') center/cover no-repeat;
+          background: url("/image/background.png") center/cover no-repeat;
           width: 1920px;
           height: 937px;
         }
@@ -130,7 +130,7 @@ function Layout(props: Props) {
           position: absolute;
           top: 30px;
           left: 30px;
-          background: url('/image/innerBox.png') center/cover no-repeat;
+          background: url("/image/innerBox.png") center/cover no-repeat;
           width: 1300px;
           height: 875px;
           padding: 65px 70px;
@@ -187,6 +187,7 @@ function Layout(props: Props) {
         .private {
           width: 100px;
           font-size: 0.8rem;
+          line-height: 2rem;
         }
         .private span:last-child {
           color: #ff6400;
