@@ -172,14 +172,14 @@ function Home() {
         }
         .category {
           width: 338px;
-          border: 1px dashed #999999;
+          border-top: 2px dotted #999;
           border-left: 0;
           border-right: 0;
         }
         .category-list {
           display: flex;
           justify-content: space-between;
-          border-bottom: 1px dashed #999999;
+          border-bottom: 2px dotted #999999;
           padding: 7px;
         }
         .category-detail {
@@ -211,7 +211,7 @@ function Home() {
           padding: 5px 0;
         }
         .playlist div {
-          border-bottom: 1px dashed #999999;
+          border-bottom: 1px dotted #999999;
           padding: 5px 0;
         }
         .playlist-header {
