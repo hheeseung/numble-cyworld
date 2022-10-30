@@ -26,31 +26,19 @@ const DELETE_POST = gql`
 `;
 
 function ReadPost() {
-  // ReadPost의 refetch를 위한 ref
-  const getBoardsRefetch =
-    React.useRef<
-      (
-        variables?: Partial<{ postId: number }> | undefined
-      ) => Promise<ApolloQueryResult<any>>
-    >();
   const router = useRouter();
   const postId = Number(router.query.postId);
-  const { data, refetch } = useQuery(GET_POST, {
+  const { data } = useQuery(GET_POST, {
     variables: {
       postId,
     },
   });
-  // save, delete가 수행되었을 때 변경내역을 다시 가져오기 위한 refetch 저장
-  getBoardsRefetch.current = refetch;
 
   const [deletePost] = useMutation(DELETE_POST, {
     // 삭제 성공 시 수행될 코드
     onCompleted: () => {
       alert("삭제 성공!");
-      if (getBoardsRefetch.current) {
-        getBoardsRefetch.current();
-        router.push("/diary");
-      }
+      router.push("/diary");
     },
   });
 
