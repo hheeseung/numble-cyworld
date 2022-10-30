@@ -1,8 +1,9 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery, ApolloQueryResult } from "@apollo/client";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import React from "react";
 
-const DIARY_LIST = gql`
+export const GET_LIST = gql`
   query getBoards {
     fetchBoards {
       number
@@ -13,7 +14,7 @@ const DIARY_LIST = gql`
 `;
 
 function Diary() {
-  const { data } = useQuery(DIARY_LIST);
+  const { data } = useQuery(GET_LIST);
   const router = useRouter();
 
   const onClick = () => {
