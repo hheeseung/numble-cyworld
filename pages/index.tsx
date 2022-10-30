@@ -1,122 +1,129 @@
+import { gql, useQuery } from "@apollo/client";
+import Link from "next/link";
+
+const DIARY_LIST = gql`
+  query getBoards {
+    fetchBoards {
+      number
+      title
+    }
+  }
+`;
+
 function Home() {
+  const { data } = useQuery(DIARY_LIST);
   return (
     <>
-      <h3 className='title'>Updated news</h3>
-      <div className='board'>
-        <div className='news'>
-          <ul className='news-list'>
-            <div className='border'></div>
-            <li>
-              <span className='badge'>다이어리</span>
-              <span>다이어리 제목1 다이어리 제목1 다이어리 제목1</span>
-            </li>
-            <li>
-              <span className='badge'>다이어리</span>
-              <span>다이어리 제목2 다이어리 제목2 다이어리 제목2</span>
-            </li>
-            <li>
-              <span className='badge'>다이어리</span>
-              <span>다이어리 제목3 다이어리 제목3 다이어리 제목3</span>
-            </li>
-            <li>
-              <span className='badge'>다이어리</span>
-              <span>다이어리 제목4 다이어리 제목4 다이어리 제목4</span>
-            </li>
+      <h3 className="title">Updated news</h3>
+      <div className="board">
+        <div className="news">
+          <ul className="news-list">
+            <div className="border"></div>
+            {data?.fetchBoards
+              .map((post: { number: number; title: string }) => (
+                <li key={post.number}>
+                  <span className="badge">다이어리</span>
+                  <Link href={`/diary/${post.number}`}>
+                    <span className="title">{post.title}</span>
+                  </Link>
+                </li>
+              ))
+              .splice(0, 4)}
           </ul>
         </div>
-        <div className='category'>
-          <div className='category-list'>
-            <div className='category-detail'>
+        <div className="category">
+          <div className="category-list">
+            <div className="category-detail">
               <span>다이어리</span>
               <span>0/65</span>
             </div>
-            <div className='category-detail'>
+            <div className="category-detail">
               <span>사진첩</span>
               <span>0/265</span>
             </div>
           </div>
-          <div className='category-list'>
-            <div className='category-detail'>
+          <div className="category-list">
+            <div className="category-detail">
               <span>게시판</span>
               <span>0/15</span>
             </div>
-            <div className='category-detail'>
+            <div className="category-detail">
               <span>방명록</span>
               <span>0/15</span>
             </div>
           </div>
         </div>
       </div>
-      <div className='music'>
-        <div className='music-header'>
+      <div className="music">
+        <div className="music-header">
           <h3>오늘의 BGM</h3>
           <span>TODAY CHOICE</span>
         </div>
-        <div className='playlist'>
-          <span className='playlist-header checkbox'>
-            <input type='checkbox' />
+        <div className="playlist">
+          <span className="playlist-header checkbox">
+            <input type="checkbox" />
           </span>
-          <span className='playlist-header number'>번호</span>
-          <span className='playlist-header'>곡명</span>
-          <span className='playlist-header'>아티스트</span>
-          <div className='checkbox'>
-            <input type='checkbox' />
+          <span className="playlist-header number">번호</span>
+          <span className="playlist-header">곡명</span>
+          <span className="playlist-header">아티스트</span>
+          <div className="checkbox">
+            <input type="checkbox" />
           </div>
-          <div className='number'>1</div>
+          <div className="number">1</div>
           <div>Happiness</div>
           <div>The 1975</div>
-          <div className='checkbox'>
-            <input type='checkbox' />
+          <div className="checkbox">
+            <input type="checkbox" />
           </div>
-          <div className='number'>2</div>
+          <div className="number">2</div>
           <div>I'm In Love With You</div>
           <div>The 1975</div>
-          <div className='checkbox'>
-            <input type='checkbox' />
+          <div className="checkbox">
+            <input type="checkbox" />
           </div>
-          <div className='number'>3</div>
+          <div className="number">3</div>
           <div>Daydreaming</div>
           <div>Harry Styles</div>
-          <div className='checkbox'>
-            <input type='checkbox' />
+          <div className="checkbox">
+            <input type="checkbox" />
           </div>
-          <div className='number'>4</div>
+          <div className="number">4</div>
           <div>Feel Good Inc.</div>
           <div>Gorillaz</div>
-          <div className='checkbox'>
-            <input type='checkbox' />
+          <div className="checkbox">
+            <input type="checkbox" />
           </div>
-          <div className='number'>5</div>
+          <div className="number">5</div>
           <div>Champagne Supernova</div>
           <div>Oasis</div>
-          <div className='checkbox'>
-            <input type='checkbox' />
+          <div className="checkbox">
+            <input type="checkbox" />
           </div>
-          <div className='number'>6</div>
+          <div className="number">6</div>
           <div>Live Forever</div>
           <div>Oasis</div>
-          <div className='checkbox'>
-            <input type='checkbox' />
+          <div className="checkbox">
+            <input type="checkbox" />
           </div>
-          <div className='number'>7</div>
+          <div className="number">7</div>
           <div>Electricity (with Dua Lipa)</div>
           <div>Silk City, Dua Lipa, Diplo, Mark Ronson</div>
-          <div className='checkbox'>
-            <input type='checkbox' />
+          <div className="checkbox">
+            <input type="checkbox" />
           </div>
-          <div className='number'>8</div>
+          <div className="number">8</div>
           <div>White Lies (feat.Jenni Potts)</div>
           <div>ODESZA, Jenni Potts</div>
-          <div className='checkbox'>
-            <input type='checkbox' />
+          <div className="checkbox">
+            <input type="checkbox" />
           </div>
-          <div className='number'>9</div>
+          <div className="number">9</div>
           <div>Hype Boy</div>
           <div>New Jeans</div>
-          <div className='checkbox'>
-            <input type='checkbox' />
+          <div className="checkbox">
+            <input type="checkbox" />
           </div>
-          <div className='number'>10</div>
+          <div className="number">10</div>
           <div>She's American</div>
           <div>The 1975</div>
         </div>
@@ -159,6 +166,9 @@ function Home() {
           padding: 2px;
           margin-right: 5px;
           border-radius: 3px;
+        }
+        .title {
+          cursor: pointer;
         }
         .category {
           width: 338px;
