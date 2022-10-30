@@ -1,11 +1,11 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from "react";
 
 function Game() {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [word, setWord] = useState('코드캠프');
+  const [word, setWord] = useState("코드캠프");
   const [result, setResult] = useState(false);
   const [visible, setVisible] = useState(true);
-  const [inputText, setInputText] = useState('');
+  const [inputText, setInputText] = useState("");
   const [lotto, setLotto] = useState([3, 5, 10, 24, 30, 34]);
 
   const onChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -19,8 +19,9 @@ function Game() {
       setWord(inputText);
       setResult(true);
       setVisible(false);
-      setInputText('');
+      setInputText("");
     } else {
+      setVisible(false);
       setResult(false);
     }
   };
@@ -39,44 +40,44 @@ function Game() {
 
   return (
     <>
-      <header className='game-header'>
+      <header className="game-header">
         <h3>Game</h3>
         <span>TODAY CHOICE</span>
       </header>
-      <section className='container'>
-        <div className='game'>
-          <img src='/image/train.png' alt='game' />
-          <p className='title'>끝말잇기</p>
-          <p className='word'>
+      <section className="container">
+        <div className="game">
+          <img src="/image/train.png" alt="game" />
+          <p className="title">끝말잇기</p>
+          <p className="word">
             제시어: <span>{word}</span>
           </p>
-          <form className='word-form' onSubmit={onSubmit}>
+          <form className="word-form" onSubmit={onSubmit}>
             <input
               ref={inputRef}
               onChange={onChange}
-              type='text'
-              className='search-input'
-              placeholder='단어를 입력하세요.'
+              type="text"
+              className="search-input"
+              placeholder="단어를 입력하세요."
               value={inputText}
             />
-            <button className='button'>검색</button>
+            <button className="button">검색</button>
           </form>
-          <p className='result'>
-            {visible ? '결과는?' : result ? '정답입니다!' : '오답입니다!'}
+          <p className="result">
+            {visible ? "결과는?" : result ? "정답입니다!" : "오답입니다!"}
           </p>
         </div>
-        <div className='lotto'>
-          <img src='/image/lotto.png' alt='lotto' />
-          <p className='title'>LOTTO</p>
+        <div className="lotto">
+          <img src="/image/lotto.png" alt="lotto" />
+          <p className="title">LOTTO</p>
           <p>버튼을 눌러 추첨하세요.</p>
-          <div className='lotto-numbers'>
+          <div className="lotto-numbers">
             {lotto.map((i, index) => (
-              <span key={index} className='lotto-number'>
+              <span key={index} className="lotto-number">
                 {i}
               </span>
             ))}
           </div>
-          <button className='button' onClick={onClick}>
+          <button className="button" onClick={onClick}>
             추첨하기
           </button>
         </div>
