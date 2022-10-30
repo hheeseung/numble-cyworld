@@ -1,8 +1,10 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery, useMutation, ApolloQueryResult } from "@apollo/client";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import React from "react";
+import { GET_LIST } from "..";
 
-const DIARY_CONTENTS = gql`
+const GET_POST = gql`
   query getBoard($postId: Int) {
     fetchBoard(number: $postId) {
       number
@@ -13,15 +15,58 @@ const DIARY_CONTENTS = gql`
   }
 `;
 
+const DELETE_POST = gql`
+  mutation deletePost($postId: Int) {
+    deleteBoard(number: $postId) {
+      _id
+      number
+      message
+    }
+  }
+`;
+
 function ReadPost() {
+  // ReadPost의 refetch를 위한 ref
+  const getBoardsRefetch =
+    React.useRef<
+      (
+        variables?: Partial<{ postId: number }> | undefined
+      ) => Promise<ApolloQueryResult<any>>
+    >();
   const router = useRouter();
   const postId = Number(router.query.postId);
-  const { data } = useQuery(DIARY_CONTENTS, {
+  const { data, refetch } = useQuery(GET_POST, {
     variables: {
       postId,
     },
   });
-  console.log(data);
+  // save, delete가 수행되었을 때 변경내역을 다시 가져오기 위한 refetch 저장
+  getBoardsRefetch.current = refetch;
+
+  const [deletePost] = useMutation(DELETE_POST, {
+    // 삭제 성공 시 수행될 코드
+    onCompleted: () => {
+      alert("삭제 성공!");
+      if (getBoardsRefetch.current) {
+        getBoardsRefetch.current();
+        router.push("/diary");
+      }
+    },
+  });
+
+  const onEdit = () => {
+    router.push(`/diary/${postId}/edit`);
+  };
+
+  const onDelete = () => {
+    deletePost({
+      variables: {
+        postId,
+      },
+      // mutation 완료 후 다이어리 목록을 재요청해 삭제 후 목록으로 refresh
+      refetchQueries: [{ query: GET_LIST }],
+    });
+  };
 
   return (
     <>
@@ -37,8 +82,8 @@ function ReadPost() {
         </div>
       </div>
       <div className="buttons">
-        <button>수정하기</button>
-        <button>삭제하기</button>
+        <button onClick={onEdit}>수정하기</button>
+        <button onClick={onDelete}>삭제하기</button>
       </div>
       <Link href="/diary">
         <a className="back">&lt; 목록으로</a>
