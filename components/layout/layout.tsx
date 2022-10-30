@@ -142,26 +142,27 @@ function Layout(props: Props) {
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 70px;
-          height: 42px;
+          width: 95px;
+          height: 55px;
           background-color: #298eb5;
           color: #ffffff;
           border: 1px solid #0f465e;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
           position: absolute;
-          right: 6px;
+          right: -19px;
           font-weight: 500;
+          font-size: 20px;
           cursor: pointer;
         }
         .home {
           top: 120px;
         }
         .game {
-          top: 165px;
+          top: 180px;
         }
         .diary {
-          top: 210px;
+          top: 240px;
         }
         /* header */
         .header {
