@@ -1,4 +1,4 @@
-import { gql, useQuery, useMutation, ApolloQueryResult } from "@apollo/client";
+import { gql, useQuery, useMutation } from "@apollo/client";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
