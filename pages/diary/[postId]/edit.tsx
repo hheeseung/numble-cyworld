@@ -30,9 +30,7 @@ function UpdatePost() {
   const textRef = useRef<HTMLTextAreaElement>(null);
   const router = useRouter();
   const postId = Number(router.query.postId);
-  const { data, refetch } = useQuery(GET_POST, {
-    variables: { postId },
-  });
+  const { data, refetch } = useQuery(GET_POST, { variables: { postId } });
   const [updatePost] = useMutation(UPDATE_POST);
   const [title, setTitle] = useState(data?.fetchBoard?.title);
   const [contents, setContents] = useState(data?.fetchBoard?.contents);
@@ -54,7 +52,7 @@ function UpdatePost() {
         number,
         title,
         contents,
-        writer: "본인",
+        writer: "User811",
       },
       onCompleted: () => {
         alert("수정 완료!");
