@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { GET_LIST } from "..";
 
-const GET_POST = gql`
+export const GET_POST = gql`
   query getBoard($postId: Int) {
     fetchBoard(number: $postId) {
       number
