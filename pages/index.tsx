@@ -1,7 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import Link from "next/link";
 
-const DIARY_LIST = gql`
+const GET_LIST = gql`
   query getBoards {
     fetchBoards {
       number
@@ -11,7 +11,7 @@ const DIARY_LIST = gql`
 `;
 
 function Home() {
-  const { data } = useQuery(DIARY_LIST);
+  const { data } = useQuery(GET_LIST);
   return (
     <>
       <h3 className="title">Updated news</h3>
