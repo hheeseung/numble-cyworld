@@ -1,8 +1,7 @@
 import { gql, useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { GET_LIST } from "..";
-// import { GET_POST } from "../[postId]";
 import Button from "../../../components/button/button";
 
 const CREATE_POST = gql`
@@ -16,18 +15,12 @@ const CREATE_POST = gql`
 `;
 
 function CreatePost() {
+  const router = useRouter();
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const textRef = useRef<HTMLTextAreaElement>(null);
-  const router = useRouter();
-  const { data } = useQuery(GET_LIST);
-  const [createPost] = useMutation(CREATE_POST, {
-    onCompleted: () => {
-      alert("등록 성공!");
-      router.push(`/diary/${data.fetchBoards[0].number}`);
-    },
-  });
+  const [createPost] = useMutation(CREATE_POST);
 
   const onInputChange = (e: React.FormEvent<HTMLInputElement>) => {
     const currInput = e.currentTarget.value;
@@ -39,15 +32,15 @@ function CreatePost() {
     setContents(currText);
   };
 
-  const onSubmit = () => {
-    createPost({
-      variables: {
-        title,
-        contents,
-        writer: "본인",
+  const onSubmit = async () => {
+    const result = await createPost({
+      variables: { title, contents, writer: "User811" },
+      onCompleted: () => {
+        alert("등록 완료!");
       },
       refetchQueries: [{ query: GET_LIST }],
     });
+    router.push(`/diary/${result.data.createBoard.number}`);
   };
 
   const onCancel = () => {
