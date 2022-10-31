@@ -29,18 +29,10 @@ function ReadPost() {
   const router = useRouter();
   const postId = Number(router.query.postId);
   const { data } = useQuery(GET_POST, {
-    variables: {
-      postId,
-    },
+    variables: { postId },
   });
 
-  const [deletePost] = useMutation(DELETE_POST, {
-    // 삭제 성공 시 수행될 코드
-    onCompleted: () => {
-      alert("삭제 성공!");
-      router.push("/diary");
-    },
-  });
+  const [deletePost] = useMutation(DELETE_POST);
 
   const onEdit = () => {
     router.push(`/diary/${postId}/edit`);
@@ -50,6 +42,11 @@ function ReadPost() {
     deletePost({
       variables: {
         postId,
+      },
+      // 삭제 성공 시 수행될 코드
+      onCompleted: () => {
+        alert("삭제 성공!");
+        router.push("/diary");
       },
       // mutation 완료 후 다이어리 목록을 재요청해 삭제 후 목록으로 refresh
       refetchQueries: [{ query: GET_LIST }],
