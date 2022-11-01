@@ -2,7 +2,7 @@ import { useQuery, useMutation } from "@apollo/client";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { DELETE_POST, GET_LIST, GET_POST } from "../../../API/query";
+import { DELETE_POST, GET_LIST, GET_POST } from "../../../api/query";
 
 function ReadPost() {
   const router = useRouter();

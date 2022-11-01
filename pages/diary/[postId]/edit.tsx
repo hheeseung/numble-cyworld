@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
-import { GET_LIST, GET_POST, UPDATE_POST } from "../../../API/query";
+import { GET_LIST, GET_POST, UPDATE_POST } from "../../../api/query";
 import Button from "../../../components/button/button";
 import TextForm from "../../../components/form/text_form";
 import PostHeader from "../../../components/header/post-header";
