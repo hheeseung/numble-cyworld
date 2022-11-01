@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import Link from "next/link";
-import { GET_LIST } from "../../api/query";
+import { GET_LIST } from "../../API/query";
 
 function BoardList() {
   const { data } = useQuery(GET_LIST);

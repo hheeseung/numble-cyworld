@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { GET_LIST } from "../../api/query";
+import { GET_LIST } from "../../API/query";
 import Header from "../../components/header/header";
 
 function Diary() {
