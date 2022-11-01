@@ -1,9 +1,4 @@
-interface IHeader {
-  title: string;
-  subtitle?: string;
-  width?: string;
-  border?: string;
-}
+import { IHeader } from "../../types/type";
 
 function Header({ title, subtitle, width, border }: IHeader) {
   return (

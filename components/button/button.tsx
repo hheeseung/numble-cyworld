@@ -1,9 +1,6 @@
-interface IProps {
-  text: string;
-  onClick: () => void;
-}
+import { IButtons } from "../../types/type";
 
-function Button(props: IProps) {
+function Button(props: IButtons) {
   return (
     <>
       <button onClick={props.onClick} className="button">
