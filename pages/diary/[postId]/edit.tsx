@@ -1,31 +1,10 @@
-import { gql, useMutation, useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
-import { GET_POST } from ".";
-import { GET_LIST } from "../..";
+import { GET_LIST, GET_POST, UPDATE_POST } from "../../../API/query";
 import Button from "../../../components/button/button";
 import TextForm from "../../../components/form/text_form";
 import PostHeader from "../../../components/header/post-header";
-
-const UPDATE_POST = gql`
-  mutation updatePost(
-    $number: Int
-    $writer: String
-    $title: String
-    $contents: String
-  ) {
-    updateBoard(
-      number: $number
-      writer: $writer
-      title: $title
-      contents: $contents
-    ) {
-      _id
-      number
-      message
-    }
-  }
-`;
 
 function UpdatePost() {
   const router = useRouter();

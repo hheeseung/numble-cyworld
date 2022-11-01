@@ -1,20 +1,10 @@
-import { gql, useMutation, useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
-import { GET_LIST } from "../..";
+import { CREATE_POST, GET_LIST } from "../../../API/query";
 import Button from "../../../components/button/button";
 import TextForm from "../../../components/form/text_form";
 import PostHeader from "../../../components/header/post-header";
-
-const CREATE_POST = gql`
-  mutation createPost($writer: String, $title: String, $contents: String) {
-    createBoard(writer: $writer, title: $title, contents: $contents) {
-      _id
-      number
-      message
-    }
-  }
-`;
 
 function CreatePost() {
   const router = useRouter();

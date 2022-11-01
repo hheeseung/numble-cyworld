@@ -1,29 +1,8 @@
-import { gql, useQuery, useMutation } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { GET_LIST } from "../..";
-
-export const GET_POST = gql`
-  query getBoard($postId: Int) {
-    fetchBoard(number: $postId) {
-      number
-      createdAt
-      title
-      contents
-    }
-  }
-`;
-
-const DELETE_POST = gql`
-  mutation deletePost($postId: Int) {
-    deleteBoard(number: $postId) {
-      _id
-      number
-      message
-    }
-  }
-`;
+import { DELETE_POST, GET_LIST, GET_POST } from "../../../API/query";
 
 function ReadPost() {
   const router = useRouter();
