@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { GET_LIST } from "..";
+import { GET_LIST } from "../../API/query";
 import Header from "../../components/header/header";
 
 function Diary() {
@@ -35,8 +35,8 @@ function Diary() {
       <style jsx>{`
         .write-btn {
           position: absolute;
-          top: 132px;
-          right: 125px;
+          top: 65px;
+          right: 50px;
           border: 1px solid #ababab;
           background-color: #ffffff;
           padding: 3px 10px;
