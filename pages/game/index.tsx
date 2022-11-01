@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import Header from "../../components/header/header";
 
 function Game() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -40,10 +41,7 @@ function Game() {
 
   return (
     <>
-      <header className="game-header">
-        <h3>Game</h3>
-        <span>TODAY CHOICE</span>
-      </header>
+      <Header title="Game" subtitle="TODAY CHOICE" />
       <section className="container">
         <div className="game">
           <img src="/image/train.png" alt="game" />
@@ -86,19 +84,6 @@ function Game() {
         p {
           margin: 0;
           padding: 0;
-        }
-        .game-header {
-          display: flex;
-          border-bottom: 1px solid #999;
-        }
-        .game-header h3 {
-          margin: 0;
-          color: #55b2d4;
-        }
-        .game-header span {
-          font-size: 0.8rem;
-          line-height: 1.8rem;
-          margin-left: 10px;
         }
         .container {
           height: 95%;
