@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRef, useState } from "react";
 
 function GetLotto() {
@@ -27,7 +28,13 @@ function GetLotto() {
 
   return (
     <div className="game">
-      <img src="/image/train.png" alt="game" />
+      <Image
+        src="/image/train.png"
+        alt="game"
+        layout="fixed"
+        width="40px"
+        height="20px"
+      />
       <p className="game__title">끝말잇기</p>
       <p className="game__word">
         제시어: <span>{word}</span>
