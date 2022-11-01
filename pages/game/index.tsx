@@ -27,7 +27,7 @@ function Game() {
     }
   };
 
-  const onClick = () => {
+  const onLottoStart = () => {
     let i = 0;
     while (i < 6) {
       let num = Math.floor(Math.random() * 45 + 1);
@@ -45,11 +45,11 @@ function Game() {
       <section className="container">
         <div className="game">
           <img src="/image/train.png" alt="game" />
-          <p className="title">끝말잇기</p>
-          <p className="word">
+          <p className="game__title">끝말잇기</p>
+          <p className="game__word">
             제시어: <span>{word}</span>
           </p>
-          <form className="word-form" onSubmit={onSubmit}>
+          <form className="game__form" onSubmit={onSubmit}>
             <input
               ref={inputRef}
               onChange={onChange}
@@ -60,22 +60,22 @@ function Game() {
             />
             <button className="button">검색</button>
           </form>
-          <p className="result">
+          <p className="game__result">
             {visible ? "결과는?" : result ? "정답입니다!" : "오답입니다!"}
           </p>
         </div>
         <div className="lotto">
           <img src="/image/lotto.png" alt="lotto" />
-          <p className="title">LOTTO</p>
+          <p className="lotto__title">LOTTO</p>
           <p>버튼을 눌러 추첨하세요.</p>
-          <div className="lotto-numbers">
+          <div className="lotto__numbers">
             {lotto.map((i, index) => (
-              <span key={index} className="lotto-number">
+              <span key={index} className="lotto__number">
                 {i}
               </span>
             ))}
           </div>
-          <button className="button" onClick={onClick}>
+          <button className="button" onClick={onLottoStart}>
             추첨하기
           </button>
         </div>
@@ -107,16 +107,17 @@ function Game() {
           padding: 22px 28px;
           font-size: 0.9rem;
         }
-        .title {
+        .game__title,
+        .lotto__title {
           margin: 5px 0;
           font-size: 1rem;
           font-weight: 600;
         }
-        .result {
+        .game__result {
           margin: 10px 0;
         }
         .search-input,
-        .lotto-numbers,
+        .lotto__numbers,
         .button {
           background-color: #fff;
           border: 1px solid #999999;
@@ -132,13 +133,13 @@ function Game() {
           margin-top: 5px;
           cursor: pointer;
         }
-        .lotto-numbers {
+        .lotto__numbers {
           background-color: #ffe400;
           font-weight: 600;
           padding: 2px 5px;
           border-radius: 10px;
         }
-        .lotto-number {
+        .lotto__number {
           margin: 0 5px;
         }
       `}</style>
