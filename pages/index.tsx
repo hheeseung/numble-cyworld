@@ -74,7 +74,7 @@ function Home() {
             <input type="checkbox" />
           </div>
           <div className="number">2</div>
-          <div>I'm In Love With You</div>
+          <div>The Sound</div>
           <div>The 1975</div>
           <div className="checkbox">
             <input type="checkbox" />
@@ -122,7 +122,7 @@ function Home() {
             <input type="checkbox" />
           </div>
           <div className="number">10</div>
-          <div>She's American</div>
+          <div>Somebody Else</div>
           <div>The 1975</div>
         </div>
       </div>
