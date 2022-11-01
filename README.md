@@ -1,34 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js로 추억의 싸이월드 구현하기
 
-## Getting Started
+![thumbnail](https://user-images.githubusercontent.com/87454393/199184379-a887739c-41dd-469c-a593-658dcf385baf.png)
 
-First, run the development server:
+## 📝 About Project
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+[넘블](https://www.numble.it/73433c95-62c7-4de8-acbb-27d0b1b2a057)에서 주최하는 Next.js를 활용한 싸이월드 클론 챌린지 프로젝트입니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✅ 요구사항
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- [x] Next.js Framework를 사용할 것
+- [x] Javascript 보단 Typescript를 사용할 것
+- [x] 백엔드 통신은 GraphQL을 사용할 것
+- [x] 배경 이미지는 레이아웃 컴포넌트를 이용해 재사용성을 높일 것
+- [x] 다이나믹 라우팅을 사용하여 게시글 상세 페이지로 이동할 것
+- [x] 게임: state를 활용하여 끝말잇기 게임과 로또 추첨을 구현할 것
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 🛠 기술 스택
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Next.js
+- Typescript
+- API: GraphQL
 
-## Learn More
+## 💻 배포
 
-To learn more about Next.js, take a look at the following resources:
+https://cyworld-clone.vercel.app/
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📕 회고록
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[Notion](https://tarry-pharaoh-ab3.notion.site/Next-js-3cd7baeef80f42bcbc1fbed20507ca8a)
