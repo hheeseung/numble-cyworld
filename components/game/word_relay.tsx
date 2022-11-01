@@ -25,7 +25,6 @@ function WordRelay() {
         width="34px"
         height="36px"
       />
-      {/* <img src="/image/lotto.png" alt="lotto" /> */}
       <p className="lotto__title">LOTTO</p>
       <p>버튼을 눌러 추첨하세요.</p>
       <div className="lotto__numbers">
