@@ -2,7 +2,7 @@ import { gql, useQuery, useMutation } from "@apollo/client";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { GET_LIST } from "..";
+import { GET_LIST } from "../..";
 
 export const GET_POST = gql`
   query getBoard($postId: Int) {
@@ -28,9 +28,7 @@ const DELETE_POST = gql`
 function ReadPost() {
   const router = useRouter();
   const postId = Number(router.query.postId);
-  const { data } = useQuery(GET_POST, {
-    variables: { postId },
-  });
+  const { data } = useQuery(GET_POST, { variables: { postId } });
 
   const [deletePost] = useMutation(DELETE_POST);
 
@@ -40,9 +38,7 @@ function ReadPost() {
 
   const onDelete = () => {
     deletePost({
-      variables: {
-        postId,
-      },
+      variables: { postId },
       // 삭제 성공 시 수행될 코드
       onCompleted: () => {
         alert("삭제 성공!");
@@ -59,7 +55,7 @@ function ReadPost() {
         <h3>Diary</h3>
         <span>&nbsp;</span>
       </header>
-      <div className="post">
+      <div className="diary">
         <div className="date">{data?.fetchBoard?.createdAt.slice(0, 10)}</div>
         <div className="contents">
           <h3 className="contents__title">{data?.fetchBoard?.title}</h3>
@@ -87,7 +83,7 @@ function ReadPost() {
           line-height: 1.8rem;
           margin-left: 10px;
         }
-        .post {
+        .diary {
           border: 1px solid #dddddd;
           width: 100%;
           height: 480px;
