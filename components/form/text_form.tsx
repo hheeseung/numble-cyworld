@@ -34,9 +34,10 @@ function TextForm({
       </div>
       <style jsx>{`
         .container {
-          margin: 15px 0;
-          padding: 15px;
+          margin: 8px 0;
+          padding: 8px;
           border: 1px solid #dddddd;
+          height: 316px;
         }
         .title,
         .contents {
@@ -52,7 +53,7 @@ function TextForm({
           margin-bottom: 15px;
         }
         .contents {
-          height: 400px;
+          height: 248px;
         }
       `}</style>
     </div>

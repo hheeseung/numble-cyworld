@@ -52,27 +52,28 @@ function Navbar() {
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 95px;
-          height: 55px;
+          width: 60px;
+          height: 32px;
           background-color: #298eb5;
           color: #ffffff;
           border: 1px solid #0f465e;
-          border-top-right-radius: 8px;
-          border-bottom-right-radius: 8px;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
           position: absolute;
-          right: -94px;
+          top: 83px;
+          left: 740px;
           font-weight: 500;
-          font-size: 20px;
+          font-size: 13px;
           cursor: pointer;
         }
         .home {
           top: 60px;
         }
         .game {
-          top: 120px;
+          top: 94px;
         }
         .diary {
-          top: 180px;
+          top: 128px;
         }
       `}</style>
     </nav>

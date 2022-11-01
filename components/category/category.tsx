@@ -23,7 +23,9 @@ function Category() {
       </div>
       <style jsx>{`
         .category {
-          width: 338px;
+          width: 194px;
+          height: 54px;
+          font-size: 13px;
           border-top: 2px dotted #999;
           border-left: 0;
           border-right: 0;
@@ -32,7 +34,7 @@ function Category() {
           display: flex;
           justify-content: space-between;
           border-bottom: 2px dotted #999999;
-          padding: 7px;
+          padding: 2px;
         }
         .category__detail {
           width: 165px;

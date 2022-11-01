@@ -45,46 +45,44 @@ function WordRelay() {
         .lotto {
           display: flex;
           flex-direction: column;
-          align-items: center;
           justify-content: space-evenly;
-          width: 300px;
-          height: 220px;
+          align-items: center;
+          width: 222px;
+          height: 168px;
           text-align: center;
           border: 1px solid #999999;
           border-radius: 10px;
           background-color: #f6f6f6;
-          padding: 22px 28px;
-          font-size: 0.9rem;
+          padding: 18px;
+          font-size: 13px;
         }
         .lotto__title {
           margin: 5px 0;
-          font-size: 1rem;
           font-weight: 600;
         }
         .lotto__numbers,
         .button {
           background-color: #fff;
           border: 1px solid #999999;
-          border-radius: 5px;
+          border-radius: 3px;
           outline: none;
         }
         .lotto__numbers {
-          margin: 10px 0;
+          width: 130px;
+          height: 20px;
+          margin: 2px;
         }
         .button {
-          margin-left: 5px;
-          padding: 3px 5px;
-          margin-top: 5px;
           cursor: pointer;
+          padding: 3px;
         }
         .lotto__numbers {
           background-color: #ffe400;
           font-weight: 600;
-          padding: 2px 5px;
-          border-radius: 10px;
+          margin: 4px;
         }
         .lotto__number {
-          margin: 0 5px;
+          margin: 0 4px;
         }
       `}</style>
     </div>

@@ -20,22 +20,23 @@ function BoardList() {
       </ul>
       <style jsx>{`
         .post {
-          width: 420px;
-          margin-right: 20px;
-          padding-top: 7px;
+          width: 253px;
+          height: 70px;
         }
         .post__list {
           list-style: none;
           padding: 0;
           margin: 0;
+          font-size: 13px;
+          padding-top: 3px;
         }
         .post__list li {
-          margin-bottom: 7px;
+          margin-bottom: 3px;
         }
         .post__badge {
           background-color: #ee3e61;
           color: #ffffff;
-          font-size: 0.8rem;
+          font-size: 10px;
           font-weight: 600;
           padding: 2px;
           margin-right: 5px;

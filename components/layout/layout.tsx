@@ -18,14 +18,17 @@ function Layout(props: IChildren) {
       <style jsx>{`
         .main {
           display: flex;
+          position: absolute;
+          top: 44px;
+          left: 6px;
         }
         .section {
-          width: 880px;
-          height: 718px;
+          width: 524px;
+          height: 442px;
           border: 1px solid #999999;
           border-radius: 10px;
           background-color: #ffffff;
-          padding: 30px 50px;
+          padding: 25px;
         }
       `}</style>
     </>

@@ -5,46 +5,54 @@ function Music() {
   return (
     <div className="music">
       <Header title="오늘의 BGM" subtitle="TODAY CHOICE" />
-      <div className="playlist">
-        <span className="playlist__header checkbox">
+      <div className="playlist header">
+        <div className="playlist__checkbox">
           <input type="checkbox" />
-        </span>
-        <span className="playlist__header number">번호</span>
-        <span className="playlist__header">곡명</span>
-        <span className="playlist__header">아티스트</span>
-        {playlist.map((music, index) => (
-          <>
-            <div className="checkbox">
-              <input type="checkbox" />
-            </div>
-            <div className="number">{index + 1}</div>
-            <div>{music.title}</div>
-            <div>{music.artist}</div>
-          </>
-        ))}
+        </div>
+        <div className="playlist__number">번호</div>
+        <div className="playlist__title">곡명</div>
+        <div className="playlist__artist">아티스트</div>
       </div>
+      {playlist.map((music, index) => (
+        <div className="playlist" key={index}>
+          <div className="playlist__checkbox">
+            <input type="checkbox" />
+          </div>
+          <div className="playlist__number">{index + 1}</div>
+          <div className="playlist__title">{music.title}</div>
+          <div className="playlist__artist">{music.artist}</div>
+        </div>
+      ))}
       <style jsx>{`
+        .music {
+          width: 464px;
+          height: 244px;
+        }
         .playlist {
-          display: grid;
-          grid-template-columns: 0.06fr 0.08fr 0.46fr 0.4fr;
+          display: flex;
           width: 100%;
-          border-top: 1px solid #999999;
+          font-size: 13px;
+          border-bottom: 1px dotted #999;
         }
-        .playlist span {
-          border-bottom: 2px solid #999999;
-          padding: 5px 0;
-        }
-        .playlist div {
-          border-bottom: 1px dotted #999999;
-          padding: 5px 0;
-        }
-        .playlist__header {
-          background-color: #eeeeee;
-          font-weight: 500;
-        }
-        .checkbox,
-        .number {
+        .playlist__checkbox {
+          width: 10%;
           text-align: center;
+        }
+        .playlist__number {
+          width: 10%;
+          text-align: center;
+        }
+        .playlist__title {
+          width: 50%;
+        }
+        .playlist__artist {
+          width: 30%;
+        }
+        .header {
+          background-color: #eeeeee;
+          border-top: 1px solid #999999;
+          border-bottom: 2px solid #999999;
+          font-weight: 600;
         }
       `}</style>
     </div>

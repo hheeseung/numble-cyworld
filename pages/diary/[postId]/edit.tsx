@@ -66,7 +66,6 @@ function UpdatePost() {
       <style jsx>{`
         .button-container {
           text-align: center;
-          margin-bottom: 30px;
         }
       `}</style>
     </>

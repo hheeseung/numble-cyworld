@@ -8,8 +8,10 @@ function Button(props: IButtons) {
       </button>
       <style jsx>{`
         .button {
-          padding: 8px;
-          font-size: 15px;
+          width: 70px;
+          height: 23px;
+          padding: 5px;
+          font-size: 13px;
           border: none;
           border-radius: 5px;
           cursor: pointer;

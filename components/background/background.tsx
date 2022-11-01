@@ -8,15 +8,15 @@ function Background(props: IChildren) {
         src="/image/background.png"
         alt="background-img"
         layout="fixed"
-        width="1920px"
-        height="935px"
+        width="1024px"
+        height="600px"
       />
       <div className="innerBox">
         <Image
           src="/image/innerBox.png"
           alt="innerBox-img"
-          width="1300px"
-          height="875px"
+          width="808px"
+          height="544px"
         />
         <div className="children">{props.children}</div>
       </div>
@@ -26,13 +26,13 @@ function Background(props: IChildren) {
         }
         .innerBox {
           position: absolute;
-          top: 20px;
-          left: 20px;
+          top: 24px;
+          left: 26px;
         }
         .children {
           position: absolute;
-          top: 60px;
-          left: 60px;
+          top: 24px;
+          left: 26px;
         }
       `}</style>
     </div>

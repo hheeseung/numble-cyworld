@@ -33,10 +33,14 @@ function Diary() {
         ))
         .splice(0, 5)}
       <style jsx>{`
+        p {
+          margin: 0;
+          padding: 0;
+        }
         .write-btn {
           position: absolute;
-          top: 65px;
-          right: 50px;
+          top: 20px;
+          right: 27px;
           border: 1px solid #ababab;
           background-color: #ffffff;
           padding: 3px 10px;
@@ -48,13 +52,19 @@ function Diary() {
           color: #ffffff;
         }
         .board-list {
+          height: 65px;
           display: flex;
           justify-content: space-between;
           align-items: center;
           border: 1px solid #dddddd;
-          margin: 20px 0;
-          padding: 5px 20px;
-          color: #999999;
+          margin: 10px 0;
+          font-size: 13px;
+        }
+        .post {
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+          font-size: 13px;
         }
         .post__title {
           color: #343131;
@@ -65,13 +75,14 @@ function Diary() {
           background-color: #55b2d4;
           color: #ffffff;
           font-weight: 600;
-          font-size: 15px;
-          padding: 3px 5px;
-          border-radius: 5px;
+          padding: 2px 4px;
+          margin-bottom: 5px;
+          border-radius: 4px;
         }
         .more-info {
           color: #999999;
           text-decoration: underline;
+          padding: 10px;
         }
       `}</style>
     </>

@@ -5,13 +5,20 @@ import {
   faEnvelope,
   faHashtag,
 } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 function Profile() {
   return (
     <>
       <aside className="aside">
         <div className="profile">
-          <img src="/image/CyworldProfile.png" alt="profile" />
+          <Image
+            src="/image/CyworldProfile.png"
+            alt="profile"
+            layout="fixed"
+            width="142px"
+            height="123px"
+          />
         </div>
         <div className="metadata">
           <ul className="metadata-list">
@@ -52,14 +59,14 @@ function Profile() {
       </aside>
       <style jsx>{`
         .aside {
-          width: 270px;
-          height: 718px;
+          width: 208px;
+          height: 440px;
           position: relative;
           margin-right: 5px;
           border: 1px solid #999999;
           border-radius: 10px;
           background-color: #ffffff;
-          padding: 28px;
+          padding: 20px;
         }
         .profile {
           margin: 10px;
@@ -71,6 +78,7 @@ function Profile() {
         .metadata-list {
           list-style: none;
           padding: 0;
+          font-size: 13px;
         }
         .metadata-list li {
           margin-bottom: 7px;
@@ -81,16 +89,17 @@ function Profile() {
         .mood {
           position: absolute;
           bottom: 41px;
+          font-size: 13px;
         }
         .mood p {
           margin: 0;
           margin-bottom: 8px;
         }
         .mood-select {
-          width: 210px;
+          width: 166px;
           padding: 3px;
           background-color: #eeeeee;
-          font-size: 1rem;
+          font-size: 13px;
         }
       `}</style>
     </>

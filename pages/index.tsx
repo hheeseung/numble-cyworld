@@ -6,7 +6,7 @@ import Music from "../components/music/music";
 function Home() {
   return (
     <>
-      <Header title="Update News" width="420px" border="2px solid #999;" />
+      <Header title="Update News" width="248px" border="2px solid #999;" />
       <div className="board">
         <BoardList />
         <Category />
@@ -15,7 +15,9 @@ function Home() {
       <style jsx>{`
         .board {
           display: flex;
-          margin-bottom: 50px;
+          width: 465px;
+          height: 88px;
+          margin-bottom: 15px;
         }
       `}</style>
     </>
