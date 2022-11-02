@@ -11,8 +11,8 @@ export const CREATE_POST = gql`
 `;
 
 export const GET_LIST = gql`
-  query getBoards {
-    fetchBoards {
+  query getBoards($page: Int) {
+    fetchBoards(page: $page) {
       number
       title
       createdAt
