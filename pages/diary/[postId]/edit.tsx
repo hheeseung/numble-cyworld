@@ -27,8 +27,8 @@ function UpdatePost() {
     setContents(currText);
   };
 
-  const onUpdate = () => {
-    updatePost({
+  const onUpdate = async () => {
+    await updatePost({
       variables: {
         number,
         title,
@@ -37,11 +37,11 @@ function UpdatePost() {
       },
       onCompleted: () => {
         alert("수정 완료!");
-        router.push(`/diary/${postId}`);
+        refetch();
       },
       refetchQueries: [{ query: GET_LIST }],
     });
-    refetch();
+    router.push(`/diary/${postId}`);
   };
 
   const onCancel = () => {
@@ -60,7 +60,7 @@ function UpdatePost() {
         contents={contents}
       />
       <div className="button-container">
-        <Button text="등록하기" onClick={onUpdate} />
+        <Button text="수정하기" onClick={onUpdate} />
         <Button text="취소하기" onClick={onCancel} />
       </div>
       <style jsx>{`

@@ -17,17 +17,17 @@ function ReadPost() {
     router.push(`/diary/${postId}/edit`);
   };
 
-  const onDelete = () => {
-    deletePost({
+  const onDelete = async () => {
+    await deletePost({
       variables: { postId },
       // 삭제 성공 시 수행될 코드
       onCompleted: () => {
         alert("삭제 성공!");
-        router.push("/diary");
       },
       // mutation 완료 후 다이어리 목록을 재요청해 삭제 후 목록으로 refresh
       refetchQueries: [{ query: GET_LIST }],
     });
+    router.push("/diary");
   };
 
   return (
