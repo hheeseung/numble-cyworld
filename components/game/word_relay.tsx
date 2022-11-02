@@ -48,7 +48,7 @@ function WordRelay() {
           placeholder="단어를 입력하세요."
           value={inputText}
         />
-        <button className="button">검색</button>
+        <button className="button">입력</button>
       </form>
       <p className="game__result">
         {visible ? "결과는?" : result ? "정답입니다!" : "오답입니다!"}
