@@ -6,19 +6,19 @@ interface IPostHeader {
 function PostHeader({ title, subtitle }: IPostHeader) {
   return (
     <header className="post-header">
-      <h3>{title}</h3>
+      <h4>{title}</h4>
       <span>│</span>
-      <h3>{subtitle}</h3>
+      <h4>{subtitle}</h4>
       <style jsx>{`
         .post-header {
           display: flex;
           align-items: center;
           border-bottom: 1px solid #999;
+          margin-bottom: 5px;
           color: #55b2d4;
         }
-        .post-header h3 {
+        .post-header h4 {
           margin: 0;
-          margin-bottom: 5px;
         }
       `}</style>
     </header>
