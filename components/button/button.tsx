@@ -10,7 +10,6 @@ function Button(props: IButtons) {
         .button {
           width: 70px;
           height: 23px;
-          padding: 5px;
           font-size: 13px;
           border: none;
           border-radius: 5px;
