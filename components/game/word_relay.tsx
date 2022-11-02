@@ -82,6 +82,7 @@ function WordRelay() {
           border: 1px solid #999999;
           outline: none;
           padding: 3px;
+          border-radius: 3px;
         }
         .button {
           background-color: #fff;
@@ -89,6 +90,7 @@ function WordRelay() {
           outline: none;
           cursor: pointer;
           padding: 3px;
+          border-radius: 3px;
         }
         .game__result {
           margin: 5px 0;
