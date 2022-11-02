@@ -2,43 +2,43 @@ import { IPlaylist } from "../types/type";
 
 export const playlist: IPlaylist[] = [
   {
-    title: "Immigrant Song",
-    artist: "Led Zeppelin",
+    title: "Love Love Love",
+    artist: "에픽하이 (Epic High)",
   },
   {
-    title: "Nothin' But A Good Time",
-    artist: "Poison",
+    title: "Y (Please Tell Me Why)",
+    artist: "프리스타일",
   },
   {
-    title: "Smell's Like Teen Spirit",
-    artist: "Nirvana",
+    title: "하루 하루",
+    artist: "빅뱅",
   },
   {
-    title: "Hammer To Fall",
-    artist: "Queen",
+    title: "눈의 꽃",
+    artist: "박효신",
   },
   {
-    title: "Do I Wanna Know?",
-    artist: "Arctic Monkeys",
+    title: "Nobody",
+    artist: "원더걸스",
   },
   {
-    title: "Morning Glory",
-    artist: "Oasis",
+    title: "I Don't Care",
+    artist: "2NE1",
   },
   {
-    title: "Thunder",
-    artist: "Imagine Dragons",
+    title: "만약에",
+    artist: "태연",
   },
   {
-    title: "Shot In The Dark",
-    artist: "AC/DC",
+    title: "사랑했나봐",
+    artist: "윤도현",
   },
   {
-    title: "Happiness",
-    artist: "The 1975",
+    title: "So Hot",
+    artist: "원더걸스",
   },
   {
-    title: "Black Magic",
-    artist: "The Amazons",
+    title: "거짓말",
+    artist: "빅뱅",
   },
 ];
