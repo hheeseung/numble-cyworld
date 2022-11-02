@@ -7,8 +7,8 @@ function Game() {
     <>
       <Header title="Game" subtitle="TODAY CHOICE" />
       <section className="game-container">
-        <GetLotto />
         <WordRelay />
+        <GetLotto />
       </section>
       <style jsx>{`
         .game-container {

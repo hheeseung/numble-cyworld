@@ -1,64 +1,48 @@
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 function GetLotto() {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [word, setWord] = useState("코드캠프");
-  const [result, setResult] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const [inputText, setInputText] = useState("");
+  const [lotto, setLotto] = useState([3, 5, 10, 24, 30, 34]);
 
-  const onChange = (e: React.FormEvent<HTMLInputElement>) => {
-    const currentText = e.currentTarget.value;
-    setInputText(currentText);
-  };
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (word[word.length - 1] === inputText?.charAt(0)) {
-      setWord(inputText);
-      setResult(true);
-      setVisible(false);
-      setInputText("");
-    } else {
-      setVisible(false);
-      setResult(false);
+  const onLottoStart = () => {
+    let i = 0;
+    while (i < 6) {
+      let num = Math.floor(Math.random() * 45 + 1);
+      if (lotto.indexOf(num) < 0) {
+        lotto.splice(i, 1, num);
+      }
+      i++;
     }
+    setLotto([...lotto]);
   };
 
   return (
-    <div className="game">
+    <div className="lotto">
       <Image
-        src="/image/train.png"
-        alt="game"
+        src="/image/lotto.png"
+        alt="lotto"
         layout="fixed"
-        width="40px"
-        height="20px"
+        width="34px"
+        height="36px"
       />
-      <p className="game__title">끝말잇기</p>
-      <p className="game__word">
-        제시어: <span>{word}</span>
-      </p>
-      <form className="game__form" onSubmit={onSubmit}>
-        <input
-          ref={inputRef}
-          onChange={onChange}
-          type="text"
-          className="word-input"
-          placeholder="단어를 입력하세요."
-          value={inputText}
-        />
-        <button className="button">검색</button>
-      </form>
-      <p className="game__result">
-        {visible ? "결과는?" : result ? "정답입니다!" : "오답입니다!"}
-      </p>
+      <p className="lotto__title">LOTTO</p>
+      <p>버튼을 눌러 추첨하세요.</p>
+      <div className="lotto__numbers">
+        {lotto.map((i, index) => (
+          <span key={index} className="lotto__number">
+            {i}
+          </span>
+        ))}
+      </div>
+      <button className="button" onClick={onLottoStart}>
+        추첨하기
+      </button>
       <style jsx>{`
         p {
           margin: 0;
           padding: 0;
         }
-        .game {
+        .lotto {
           display: flex;
           flex-direction: column;
           justify-content: space-evenly;
@@ -72,30 +56,37 @@ function GetLotto() {
           padding: 18px;
           font-size: 13px;
         }
-        .game__title {
+        .lotto__title {
           margin: 5px 0;
           font-weight: 600;
         }
-        .word-input {
-          width: 136px;
-          background-color: #fff;
-          border: 1px solid #999999;
-          outline: none;
-          padding: 3px;
-        }
+        .lotto__numbers,
         .button {
           background-color: #fff;
           border: 1px solid #999999;
+          border-radius: 3px;
           outline: none;
+        }
+        .lotto__numbers {
+          width: 140px;
+          height: 20px;
+          margin: 2px;
+        }
+        .button {
           cursor: pointer;
           padding: 3px;
         }
-        .game__result {
-          margin: 5px 0;
+        .lotto__numbers {
+          background-color: #ffe400;
+          font-weight: 600;
+          margin: 4px;
+          padding: 0 2px;
+        }
+        .lotto__number {
+          margin: 0 4px;
         }
       `}</style>
     </div>
   );
 }
-
 export default GetLotto;
