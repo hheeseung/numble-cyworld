@@ -30,6 +30,7 @@ function Music() {
         }
         .playlist {
           display: flex;
+          align-items: center;
           width: 100%;
           font-size: 13px;
           border-bottom: 1px dotted #999;
