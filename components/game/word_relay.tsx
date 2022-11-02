@@ -4,8 +4,7 @@ import { useRef, useState } from "react";
 function WordRelay() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [word, setWord] = useState("코드캠프");
-  const [result, setResult] = useState(false);
-  const [visible, setVisible] = useState(true);
+  const [result, setResult] = useState("결과는?");
   const [inputText, setInputText] = useState("");
 
   const onChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -17,12 +16,10 @@ function WordRelay() {
     e.preventDefault();
     if (word[word.length - 1] === inputText?.charAt(0)) {
       setWord(inputText);
-      setResult(true);
-      setVisible(false);
+      setResult("정답입니다!");
       setInputText("");
     } else {
-      setVisible(false);
-      setResult(false);
+      setResult("오답입니다!");
     }
   };
 
@@ -50,9 +47,7 @@ function WordRelay() {
         />
         <button className="button">입력</button>
       </form>
-      <p className="game__result">
-        {visible ? "결과는?" : result ? "정답입니다!" : "오답입니다!"}
-      </p>
+      <p className="game__result">{result}</p>
       <style jsx>{`
         p {
           margin: 0;
