@@ -26,23 +26,26 @@ function HeaderLayout() {
         .group {
           display: flex;
           justify-content: space-between;
-          width: 378px;
+          width: 383px;
           height: 16px;
           position: absolute;
           left: 44px;
           top: 26px;
         }
         .visit {
+          font-family: "NeoDunggeunmo";
           width: 131px;
-          height: 15px;
+          height: 16px;
           display: flex;
           justify-content: space-evenly;
-          font-size: 9px;
+          align-items: center;
+          font-size: 12px;
         }
         .visit span:nth-child(2) {
           color: #ff0000;
         }
         .title {
+          font-family: "NeoDunggeunmo";
           display: flex;
           justify-content: space-evenly;
           width: 200px;
@@ -56,10 +59,13 @@ function HeaderLayout() {
         .private {
           position: absolute;
           top: 28px;
-          right: 24px;
-          width: 83px;
+          right: 22px;
+          width: 87px;
           height: 18px;
-          font-size: 11px;
+          font-size: 9px;
+        }
+        .private span:first-child {
+          font-family: "S-CoreDream-3Light";
         }
         .private span:last-child {
           color: #ff6400;
