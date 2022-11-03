@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { GET_LIST, GET_POST, UPDATE_POST } from "../../../API/query";
 import Button from "../../../components/button/button";
 import TextForm from "../../../components/form/text_form";
@@ -9,8 +9,6 @@ import PostHeader from "../../../components/header/post-header";
 function UpdatePost() {
   const router = useRouter();
   const postId = Number(router.query.postId);
-  const number = postId;
-  const textRef = useRef<HTMLTextAreaElement>(null);
   const { data, refetch } = useQuery(GET_POST, { variables: { postId } });
   const [updatePost] = useMutation(UPDATE_POST);
   const [title, setTitle] = useState(data?.fetchBoard?.title);
@@ -29,7 +27,7 @@ function UpdatePost() {
   const onUpdate = async () => {
     await updatePost({
       variables: {
-        number,
+        number: postId,
         title,
         contents,
         writer: "User811",
