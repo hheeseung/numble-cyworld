@@ -23,6 +23,8 @@
 
 ## 💻 배포
 
+![cyworld-clone](https://user-images.githubusercontent.com/87454393/199737021-b9df626a-b6e1-476c-b30c-12c6374a0707.gif)
+
 - https://cyworld-clone.vercel.app/
 - 참고: 비율이 고정되어 있기 때문에 웹화면을 권장합니다.
 
