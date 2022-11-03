@@ -60,7 +60,7 @@ function Profile() {
       <style jsx>{`
         .aside {
           width: 208px;
-          height: 440px;
+          height: 442px;
           position: relative;
           margin-right: 5px;
           border: 1px solid #999999;
