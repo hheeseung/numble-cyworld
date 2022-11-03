@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 function WordRelay() {
-  const inputRef = useRef<HTMLInputElement>(null);
   const [word, setWord] = useState("코드캠프");
   const [result, setResult] = useState("결과는?");
   const [inputText, setInputText] = useState("");
@@ -38,7 +37,6 @@ function WordRelay() {
       </p>
       <form className="game__form" onSubmit={onSubmit}>
         <input
-          ref={inputRef}
           onChange={onChange}
           type="text"
           className="word-input"

@@ -1,5 +1,3 @@
-import { RefObject } from "react";
-
 export interface IPlaylist {
   title: string;
   artist: string;
@@ -15,8 +13,6 @@ export interface IButtons {
 }
 
 export interface ITextForm {
-  inputRef: RefObject<HTMLInputElement>;
-  textRef: RefObject<HTMLTextAreaElement>;
   onTitleChange: (e: React.FormEvent<HTMLInputElement>) => void;
   onContentsChange: (e: React.FormEvent<HTMLTextAreaElement>) => void;
   title?: string;

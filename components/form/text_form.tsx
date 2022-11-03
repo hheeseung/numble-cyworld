@@ -1,8 +1,6 @@
 import { ITextForm } from "../../types/type";
 
 function TextForm({
-  inputRef,
-  textRef,
   onTitleChange,
   onContentsChange,
   title,
@@ -12,7 +10,6 @@ function TextForm({
     <div className="container">
       <div>
         <input
-          ref={inputRef}
           className="title"
           type="text"
           placeholder="제목을 입력하세요."
@@ -24,7 +21,6 @@ function TextForm({
       </div>
       <div>
         <textarea
-          ref={textRef}
           className="contents"
           placeholder="내용을 입력하세요."
           onChange={onContentsChange}

@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { CREATE_POST, GET_LIST } from "../../../API/query";
 import Button from "../../../components/button/button";
 import TextForm from "../../../components/form/text_form";
@@ -8,8 +8,6 @@ import PostHeader from "../../../components/header/post-header";
 
 function CreatePost() {
   const router = useRouter();
-  const inputRef = useRef<HTMLInputElement>(null);
-  const textRef = useRef<HTMLTextAreaElement>(null);
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
   const [createPost] = useMutation(CREATE_POST);
@@ -43,8 +41,6 @@ function CreatePost() {
     <>
       <PostHeader title="Diary" subtitle="글 등록" />
       <TextForm
-        inputRef={inputRef}
-        textRef={textRef}
         onTitleChange={onTitleChange}
         onContentsChange={onContentsChange}
       />

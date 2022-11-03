@@ -10,7 +10,6 @@ function UpdatePost() {
   const router = useRouter();
   const postId = Number(router.query.postId);
   const number = postId;
-  const inputRef = useRef<HTMLInputElement>(null);
   const textRef = useRef<HTMLTextAreaElement>(null);
   const { data, refetch } = useQuery(GET_POST, { variables: { postId } });
   const [updatePost] = useMutation(UPDATE_POST);
@@ -52,8 +51,6 @@ function UpdatePost() {
     <>
       <PostHeader title="Diary" subtitle="글 수정" />
       <TextForm
-        inputRef={inputRef}
-        textRef={textRef}
         onTitleChange={onTitleChange}
         onContentsChange={onContentsChange}
         title={title}
