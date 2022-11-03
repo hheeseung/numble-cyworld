@@ -23,8 +23,8 @@
 
 ## 💻 배포
 
-https://cyworld-clone.vercel.app/
-참고: 비율이 고정되어 있기 때문에 웹화면을 권장합니다.
+- https://cyworld-clone.vercel.app/
+- 참고: 비율이 고정되어 있기 때문에 웹화면을 권장합니다.
 
 ## 📕 회고록
 
