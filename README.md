@@ -32,4 +32,4 @@
 
 ## 📕 회고록
 
-[Notion](https://tarry-pharaoh-ab3.notion.site/Next-js-3cd7baeef80f42bcbc1fbed20507ca8a)
+[Notion](https://hheeseung.notion.site/Next-js-3cd7baeef80f42bcbc1fbed20507ca8a?pvs=4)
